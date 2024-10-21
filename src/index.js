@@ -34,7 +34,6 @@ class ComponentLocatorPlugin {
                 }
             });
 
-
             const scriptContent = this.generateScriptContent(compiler.context, componentsMap);
 
             compilation.assets['component-locator.js'] = {
@@ -150,7 +149,10 @@ class ComponentLocatorPlugin {
                                 const formattedPath = path.replace(/^[A-Z]:/, '').replace(/\\\\/g, '/');
                                 url = \`webstorm://open?file=\${formattedPath}\`;
                                 break;
-                            // Add cases for other editors as needed
+                            case 'idea':
+                                const ideaFormattedPath = path.replace(/^[A-Z]:/, '').replace(/\\\\/g, '/');
+                                url = \`idea://open?file=\${ideaFormattedPath}\`;
+                                break;
                             default:
                                 console.warn(\`Unsupported editor: \${editor}\`);
                                 return;
