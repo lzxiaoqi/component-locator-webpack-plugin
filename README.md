@@ -27,7 +27,7 @@ module.exports = {
 
 ## Options
 
-- `editor`: The editor to open files in. Default: 'vscode'
+- `editor`: The editor to open files in. Can be 'vscode', 'webstorm', or 'idea'. Default: 'vscode'
 - `componentExtensions`: File extensions to consider as components. Default: ['.vue', '.js', '.ts', '.jsx', '.tsx']
 - `triggerKey`: The key to hold while clicking. Can be 'ctrl', 'cmd', or 'both'. Default: 'both'
 - `srcDir`: The source directory of your components. Default: 'src'
